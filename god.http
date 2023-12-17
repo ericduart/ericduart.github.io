@@ -1,0 +1,24 @@
+# GET
+
+GET https://api.github.com/user/repos
+Accept: application/vnd.github+json
+Authorization: Bearer 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
+X-GitHub-Api-Version: 2022-11-28
+
+################# j91jbkvjarj89iz0lecavuqoyi727d
+
+POST  https://id.twitch.tv/oauth2/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id=12z63cujeh33ku4av415uglcr96zdn&client_secret=t6qxlbpoka77id02pbo8wnuv599fdm&grant_type=client_credentials
+
+############
+
+GET https://api.twitch.tv/helix/streams?first=10&after=eyJiIjp7IkN1cnNvciI6ImV5SnpJam81TVRrMk9DNHhNelkzTnpNM01UVTVPU3dpWkNJNlptRnNjMlVzSW5RaU9uUnlkV1Y5In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqb3hPRFk0TlM0eU5EY3lOVEkxTkRJeE9Dd2laQ0k2Wm1Gc2MyVXNJblFpT25SeWRXVjkifX0
+Authorization: Bearer j91jbkvjarj89iz0lecavuqoyi727d
+Client-Id: 12z63cujeh33ku4av415uglcr96zdn
+
+#######
+
+GET https://id.twitch.tv/oauth2/validate
+Authorization: OAuth hu80vtty64v2hb6lyh1fm48s5ri56x
