@@ -18,7 +18,7 @@ import Moon from '../svgs/moon.astro'
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon-white.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -170,6 +170,7 @@ import Moon from '../svgs/moon.astro'
 		display: flex;
 		margin-top: 100px;
 		justify-content: end;
+		margin-right: 25px;
 	}
 
 </style>
@@ -203,12 +204,22 @@ import Moon from '../svgs/moon.astro'
 
 	/* SET THEME */
 
+	const changeFavicon = (type) => {
+		if (type == "white") {
+			document.querySelector("link[rel~='icon']").setAttribute("href","/favicon-white.svg")
+		} else {
+			document.querySelector("link[rel~='icon']").setAttribute("href","/favicon-dark.svg")
+		}
+	}
+
 	const prefersDarkColorScheme = () => window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 
 
 	if (prefersDarkColorScheme()) {
 
 		lightSvg.style.display = 'block'
+
+		changeFavicon("white")
 		
 		rootHtml.setAttribute('data-theme', 'dark')
 
@@ -216,12 +227,14 @@ import Moon from '../svgs/moon.astro'
 
 		darkSvg.style.display = 'block'
 
+		changeFavicon("dark")
+
 	}
 
 	darkSvg.addEventListener('click', () => {
 		darkSvg.style.display = "none"
 		lightSvg.style.display = "block"
-
+		
 		rootHtml.setAttribute('data-theme', 'dark')
 
 	})

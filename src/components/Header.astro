@@ -83,7 +83,30 @@ import Hackthebox from "../svgs/Hackthebox.astro";
     gap: 5px;
   }
 
-  @media (width >= 600px) {
-    
+  @media (width <= 750px) {
+    header{
+      flex-direction: column;
+    }
+
+    .header_section {
+      width: 100%;
+    }
+
+    .header_section:nth-child(2) {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      max-width: 300px;
+    }
+
   }
+
+  @media (width <= 550px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
 </style>
