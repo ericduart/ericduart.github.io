@@ -18,7 +18,7 @@ import Moon from '../svgs/moon.astro'
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon-white.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -204,30 +204,18 @@ import Moon from '../svgs/moon.astro'
 
 	/* SET THEME */
 
-	const changeFavicon = (type) => {
-		if (type == "white") {
-			document.querySelector("link[rel~='icon']").setAttribute("href","/favicon-white.svg")
-		} else {
-			document.querySelector("link[rel~='icon']").setAttribute("href","/favicon-dark.svg")
-		}
-	}
-
 	const prefersDarkColorScheme = () => window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 
 
 	if (prefersDarkColorScheme()) {
 
 		lightSvg.style.display = 'block'
-
-		changeFavicon("white")
 		
 		rootHtml.setAttribute('data-theme', 'dark')
 
 	} else {
 
 		darkSvg.style.display = 'block'
-
-		changeFavicon("dark")
 
 	}
 
