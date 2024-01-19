@@ -1,0 +1,238 @@
+---
+
+import { lightSvgID, darkSvgID } from '../utils/constants'
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import Sun from '../svgs/sun.astro'
+import Moon from '../svgs/moon.astro'
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav>
+			<Sun id={ lightSvgID } />
+			<Moon id={ darkSvgID } />
+		</nav>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--background: #f5f5f5;
+		--background-hover: #e6e6e6;
+		--background-hover: white;
+		--color-primary: #000;
+		--svg-color: #424242;
+		--color-secundary: #494949;
+		--background-card: #8f8f8f;
+		--color-highlight: #00e1ff;
+		--color-highlight: #2E7D32;
+		--color-highlight-secundary: #0192a5;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--background: #242729;
+			--background-hover: #2f3031;
+			--color-primary: #FFF;
+			--svg-color: #cecece;
+			--color-secundary: #d4d4d4;
+			--background-card: #1b1c1d;
+			--color-highlight: #00e1ff;
+			--color-highlight: #00ff74;
+			--color-highlight-secundary: #0192a5;
+		}
+	}
+
+	[data-theme="light"] {
+		--background: #f5f5f5;
+		--background-hover: #e6e6e6;
+		--background-hover: white;
+		--color-primary: #000;
+		--svg-color: #424242;
+		--background-card: #8f8f8f;
+		--color-secundary: #494949;
+		--color-highlight: #00e1ff;
+		--color-highlight: #2E7D32;
+		--color-highlight-secundary: #0192a5;
+	}
+	
+	[data-theme="dark"] {
+		--background: #242729;
+		--background-hover: #2f3031;
+		--color-primary: #FFF;
+		--svg-color: #cecece;
+		--color-secundary: #d4d4d4;
+		--background-card: #1b1c1d;
+		--color-highlight: #00e1ff;
+		--color-highlight-secundary: #0192a5;
+		--color-highlight: #00ff74;
+	}
+
+	path {
+    stroke: var(--svg-color);
+  }
+
+	.invert_path path {
+		stroke: var(--background);
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+		background: var(--background);
+		color: var(--color-primary);
+		background-size: 224px;
+		max-width: 1000px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.initial-animation {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	.fade-in {
+		opacity: 0;
+		transform: translateY(20px);
+		animation: fadeIn .25s ease-in-out forwards;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.light-dark {
+		display: none;
+	}
+
+	h1 {
+		font-size: 4rem;
+	}
+
+	.hover {
+		transition: .2s;
+	}
+
+	.hover:hover {
+		background-color: var(--background-hover) !important;
+    transform: translateY(-10px) !important;
+	}
+
+	.reverseHover {
+		transition: .2s;
+	}
+
+	.reverseHover:hover {
+		background-color: var(--color-secundary) !important;
+    transform: translateY(-10px) !important;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--color-primary);
+	}
+
+</style>
+
+<style>
+
+	nav {
+		display: flex;
+		margin-top: 100px;
+		justify-content: end;
+		margin-right: 25px;
+	}
+
+</style>
+
+<script>
+
+	import { lightSvgID, darkSvgID } from '../utils/constants'
+
+	const darkSvg = document.querySelector(`#${darkSvgID}`) as HTMLElement
+	const lightSvg = document.querySelector(`#${lightSvgID}`) as HTMLElement
+	const rootHtml = document.querySelector("html")
+
+  let delay = 0
+	const gap = 40
+
+  document.querySelectorAll(".initial-animation").forEach(async el => {
+
+		
+		setTimeout(() => {
+			el.classList.remove('initial-animation')
+			el.classList.add("fade-in")
+
+			setTimeout(() => {
+				el.classList.remove("fade-in")
+			}, 300)
+
+		}, delay)
+		
+		delay += gap
+  })
+
+	/* SET THEME */
+
+	const prefersDarkColorScheme = () => window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+
+	if (prefersDarkColorScheme()) {
+
+		lightSvg.style.display = 'block'
+		
+		rootHtml.setAttribute('data-theme', 'dark')
+
+	} else {
+
+		darkSvg.style.display = 'block'
+
+	}
+
+	darkSvg.addEventListener('click', () => {
+		darkSvg.style.display = "none"
+		lightSvg.style.display = "block"
+		
+		rootHtml.setAttribute('data-theme', 'dark')
+
+	})
+
+	lightSvg.addEventListener('click', () => {
+		darkSvg.style.display = "block"
+		lightSvg.style.display = "none"
+
+		rootHtml.setAttribute('data-theme', 'light')
+
+	})
+
+</script>

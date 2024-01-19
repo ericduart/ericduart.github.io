@@ -1,0 +1,129 @@
+---
+import githubRepositories from '../utils/projects.json'
+import Send from '../svgs/Send.astro'
+---
+
+<section>
+  <h1 class="initial-animation">Mis proyectos.</h1>
+  <div class="projects">
+    {githubRepositories.map(repo => {
+      return (
+        <a href={repo.repoUrl} target="_blank" class="card initial-animation">
+          <h2>{repo.name}</h2>
+          <p class="desc">{repo.desc}</p>
+          <div class="link">
+            <Send width="30" height="30" />
+          </div>
+          <div class="tags">
+            {repo.tags.map(tag => {
+
+              return (
+                <p class="tag">{tag}</p>
+              )
+
+            })}
+          </div>
+        </a>
+      )
+    })}
+  </div>
+</section>
+
+<style>
+
+  section {
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  .projects {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .link {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 0;
+    transition: .2s;
+  }
+
+  .card {
+    position: relative;
+    width: 350px;
+    min-height: 200px;
+    background-color: var(--background);
+    border: 2px solid var(--color-highlight);
+    padding: 20px;
+    transition: .2s;
+  }
+
+  .card:nth-child(odd):hover {
+    transform: rotate(1deg);
+  }
+
+  .card:nth-child(even):hover {
+    transform: rotate(-1deg);
+  }
+
+  .card:hover {
+    border: 2px solid var(--color-highlight);
+    background-color: var(--background-hover);
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .card:hover .link{
+    opacity: 1;
+  }
+
+  .card:hover .tag {
+    background-color: var(--color-primary);
+  }
+
+  .tags {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tag-separator {
+    border-right: 2px solid white;
+  }
+
+  .tag {
+    background-color: var(--color-secundary);
+    color: var(--background);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .desc {
+    margin-top: 10px;
+  }
+
+  @media (width <= 840px) {
+    .projects {
+      flex-direction: column;
+    }
+
+    .card {
+      width: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+</style>

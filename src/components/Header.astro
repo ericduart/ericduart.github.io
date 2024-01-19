@@ -1,0 +1,112 @@
+---
+import Github from "../svgs/Github.astro";
+import Hackthebox from "../svgs/Hackthebox.astro";
+
+---
+
+<header>
+  <div class="header_section">
+    <h1 class="initial-animation">Hola, soy Eric Duart.</h1>
+    <h2 class="initial-animation highlight">Desarrollador software</h2>
+    <p class="skills initial-animation"># Node.js | React | Kotlin | API REST</p>
+    <div class="links">
+      <a class="initial-animation link_block reverseHover" href="https://github.com/ericduart" target="_blank"><Github /></a>
+    </div>
+  </div>
+  <div class="header_section">
+    <img class="initial-animation" src="/me.jpg" alt="Avatar de mi">
+  </div>
+
+</header>
+
+<style>
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+
+  .link_cv {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+
+  }
+
+  .link_block {
+    color: var(--background);
+    background-color: var(--color-primary);
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .link_cv path {
+    stroke: var(--background);
+  }
+
+  .highlight {
+    border-left: 5px solid var(--color-highlight);
+    padding: 0 10px;
+  }
+
+  .skills {
+    margin-top: 10px;
+    color: var(--color-secundary);
+  }
+
+  header{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header_section {
+    width: 50%;
+    padding: 40px;
+  }
+
+
+  p {
+    letter-spacing: 3.5px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 15px;
+
+  }
+
+  .links {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+  }
+
+  @media (width <= 750px) {
+    header{
+      flex-direction: column;
+    }
+
+    .header_section {
+      width: 100%;
+    }
+
+    .header_section:nth-child(2) {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      max-width: 300px;
+    }
+
+  }
+
+  @media (width <= 550px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+</style>
