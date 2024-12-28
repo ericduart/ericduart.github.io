@@ -1,5 +1,9 @@
+---
+import ContactSVG from "../svgs/ContactSVG.astro"
+---
+
 <footer class="link_block reverseHover initial-animation">
-  <a href="mailto:eric.duasan@gmail.com">Vamos a crear juntos</a>
+  <a href="mailto:eric.duasan@gmail.com">Vamos a crear juntos <ContactSVG /></a>
 </footer>
 
 <style>
@@ -16,6 +20,9 @@
 
   a {
     color: var(--background);
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
 </style>
