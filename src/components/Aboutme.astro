@@ -1,22 +1,19 @@
 <section>
-  <p class="initial-animation justify">
-    Una vez leí una cita de Robert Jordan que decía:
-  </p> 
-  
-  <p class="initial-animation bold"><span class="comillas">"</span>Casi muertos ayer, tal vez muertos mañana, pero vivos, gloriosamente vivos, hoy.<span class="comillas">"</span></p>
-  
-  <p class="initial-animation justify">Y no es solo que se me quedó en la cabeza, sino que me llevó a pensar que uno de los momentos que más vivo me siento es cuando estoy inmerso en mi código.</p>
-  
-  <p class="initial-animation justify">Entusiasta del género <span class="highlight">fantástico</span>, el mundo del <span class="highlight">voleibol</span>, el <span class="highlight">hacking ético</span> y, por supuesto, la <span class="highlight">programación</span>.</p>
+  <div>
+    <p class="initial-animation justify">Creo que, si tuviera que definirme en una frase breve, diría algo como:</p> 
+    <p class="bold"><span class="comillas">"</span>Curioso con curiosidad no finita.<span class="comillas">"</span></p>
+    <p>Me encanta leer fantasía, jugar volleyball y, por supuesto, programar.</p>
 
+  </div>
 </section>
 
 
 <style>
 
   section {
-    margin: 50px 50px 0;
-    padding: 50px;
+    margin: 0 20px 40px;
+    display: flex;
+    justify-content: center;
   }
 
   p {
@@ -30,13 +27,12 @@
   }
 
   .comillas:nth-child(1) {
-    padding-right: 10px;
+    margin-right: 5px;
   }
 
   .comillas:nth-child(2) {
-    padding-left: 10px;
+    margin-left: 5px;
   }
-
 
   .highlight {
     color: var(--color-highlight);
@@ -53,7 +49,7 @@
 
   @media (width <= 740px) {
     section {
-      margin: 50px 0 0;
+      margin: 0;
       padding: 30px;
     }
   }
