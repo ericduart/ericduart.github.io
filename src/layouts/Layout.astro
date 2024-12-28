@@ -38,7 +38,7 @@ import Moon from '../svgs/moon.astro'
 		--background-hover: white;
 		--color-primary: #000;
 		--svg-color: #424242;
-		--color-secundary: #494949;
+		--color-secundary: #414141;
 		--background-card: #8f8f8f;
 		--color-highlight: #00e1ff;
 		--color-highlight: #2E7D32;
@@ -66,7 +66,7 @@ import Moon from '../svgs/moon.astro'
 		--color-primary: #000;
 		--svg-color: #424242;
 		--background-card: #8f8f8f;
-		--color-secundary: #494949;
+		--color-secundary: #414141;
 		--color-highlight: #00e1ff;
 		--color-highlight: #2E7D32;
 		--color-highlight-secundary: #0192a5;
@@ -90,6 +90,11 @@ import Moon from '../svgs/moon.astro'
 
 	.invert_path path {
 		stroke: var(--background);
+	}
+
+	.invert_path_fill path {
+		stroke: var(--background);
+		fill: var(--background);
 	}
 
 	* {
