@@ -10,15 +10,14 @@
     "tags": ["React", "API REST"],
     "repoUrl": "https://github.com/ericduart/get-twitch-follows"
   }, {
-    "name": "telegram-infojobs",
-    "desc": "Aplicación para saber qué usuarios/streamers sigue un usuario determinado. ¡Con esta aplicación participé en mi primera hackaton!",
-    "tags": ["Node.js", "Typescript", "API REST"],
-    "repoUrl": "https://github.com/ericduart/telegram-infojobs"
+    "name": "robot-generator",
+    "desc": "Generador de robots aleatorios",
+    "tags": [".NET", "MVVM", "Entity Framework"],
+    "repoUrl": "https://github.com/ericduart/robot-generator"
   }, {
     "name": "android-infinite-scrolling",
     "desc": "Devuelve los directos de Twitch con más visualizaciones. Hace lo mismo que mi proyecto react-infinite-scrolling, pero adaptado a Android.",
     "tags": ["Kotlin", "API REST"],
     "repoUrl": "https://github.com/ericduart/android-infinite-scrolling"
   }
-  
 ]
