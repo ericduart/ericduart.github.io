@@ -1,8 +1,15 @@
+---
+import Magic from "../svgs/Magic.astro"
+import Volleyball from "../svgs/Volleyball.astro"
+import Stack from "../svgs/Stack.astro"
+
+---
 <section>
   <div>
     <p class="initial-animation justify">Creo que, si tuviera que definirme en una frase breve, diría algo como:</p> 
-    <p class="bold initial-animation"><span class="comillas">"</span>Curioso con curiosidad no finita.<span class="comillas">"</span></p>
-    <p class="initial-animation">Me encanta leer fantasía, jugar volleyball y, por supuesto, programar.</p>
+    <p class="bold initial-animation"><span class="comillas">"</span>Curioso con curiosidad no finita, como el eterno girar de la rueda del tiempo.<span class="comillas">"</span></p>
+    <p class="initial-animation passions">Me encanta leer fantasía<span><Magic /></span>, jugar voleibol <span><Volleyball /></span> y, por supuesto, programar<span><Stack /></span>.</p>
+    <p class="mobile-passins initial-animation"><Magic /> - <Volleyball /> - <Stack /></p>
 
   </div>
 </section>
@@ -47,11 +54,39 @@
     font-weight: bolder;
   }
 
+  .passions {
+    display: flex;
+    align-items: center;
+  }
+
+  .passions span {
+    margin: 0 5px;
+  }
+
+  .mobile-passins {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
   @media (width <= 740px) {
     section {
       margin: 0;
       padding: 30px;
     }
+  }
+
+  @media (width <= 717px) {
+    .passions span {
+      display: none;
+    }
+
+    .mobile-passins {
+      display: flex;
+    }
+
   }
 
 </style>
