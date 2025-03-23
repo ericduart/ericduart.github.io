@@ -1,0 +1,9 @@
+[
+  {
+    "company": "Imagina IT Solutions",
+    "position": "Full Stack Developer",
+    "startDate": "2024-03-10",
+    "endDate": "Actualidad",
+    "description": "Encargado de mantener el cloud de Imagina (Help center, Back office y el Admins/Distributors), desarrollado en Next.js, MongoDB y Redis. Además, he dado soporte de forma continua a los diferentes proyectos de la empresa a la par que desarrollando nuevas funcionalidades y mejoras con .NET y EF core."
+  }
+]

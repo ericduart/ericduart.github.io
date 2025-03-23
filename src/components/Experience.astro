@@ -1,0 +1,35 @@
+---
+import experiences from '../data/experiences.json';
+import Work from '../svgs/Work.astro';
+---
+
+<section>
+  <h1>Experiencias laborales</h1>
+
+  <div class="experiences">
+    {experiences.map(experience => {
+      return (
+        <div class="card">
+          <h2>{experience.company}</h2>
+          <p class="desc"><Work />{experience.position}</p>
+          <p class="desc">{experience.startDate} - {experience.endDate}</p>
+          <p class="desc">{experience.description}</p>
+        </div>
+      )
+    })}
+
+</section>
+
+<style>
+
+  section {
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+</style>

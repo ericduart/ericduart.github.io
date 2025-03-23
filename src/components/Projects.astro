@@ -1,5 +1,5 @@
 ---
-import githubRepositories from '../utils/projects.json'
+import githubRepositories from '../data/projects.json'
 import Send from '../svgs/Send.astro'
 ---
 
@@ -62,23 +62,22 @@ import Send from '../svgs/Send.astro'
     width: 350px;
     min-height: 200px;
     background-color: var(--background);
-    border: 2px solid var(--color-highlight);
+    border: 2px solid var(--color-primary);
     padding: 20px;
     transition: .2s;
   }
 
-  .card:nth-child(odd):hover {
+  .card:nth-child(odd) {
     transform: rotate(1deg);
   }
 
-  .card:nth-child(even):hover {
+  .card:nth-child(even) {
     transform: rotate(-1deg);
   }
 
   .card:hover {
     border: 2px solid var(--color-highlight);
     background-color: var(--background-hover);
-    width: 400px;
     border-radius: 10px;
     box-shadow: none;
   }
