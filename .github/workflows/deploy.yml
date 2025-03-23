@@ -19,16 +19,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Change if needed
+          node-version: 20
 
       - name: Install dependencies
-        run: npm install  # Adjust if using yarn or pnpm
+        run: npm install
 
       - name: Build project
-        run: npm run build  # Change based on your framework
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: path/to/build  # Change to your actual output folder
+          folder: dist
