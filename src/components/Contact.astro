@@ -1,16 +1,16 @@
 ---
-import ContactSVG from "../svgs/ContactSVG.astro"
+import ContactSVG from "../svgs/ContactSVG.astro";
 ---
 
 <footer class="link_block reverseHover initial-animation">
-  <a href="mailto:eric.duasan@gmail.com">Vamos a crear juntos <ContactSVG /></a>
+  <a href="mailto:eric.duasan@gmail.com">
+    Si crees que puedo aportar a tu equipo, hablemos. <ContactSVG />
+  </a>
 </footer>
 
 <style>
   footer {
-    margin: 50px auto 50px auto;
-
-
+    margin: 50px auto;
     width: fit-content;
     background-color: var(--color-primary);
     padding: 20px 25px;
@@ -25,4 +25,15 @@ import ContactSVG from "../svgs/ContactSVG.astro"
     gap: 10px;
   }
 
+  @media (width <= 550px) {
+    footer {
+      margin: 40px 16px;
+      width: auto;
+      text-align: center;
+    }
+
+    a {
+      justify-content: center;
+    }
+  }
 </style>

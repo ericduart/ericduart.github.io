@@ -1,24 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
-import Projects from '../components/Projects.astro';
-import Aboutme from '../components/Aboutme.astro';
-import Contact from '../components/Contact.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+import Aboutme from "../components/Aboutme.astro";
 ---
 
-<Layout title="Eric Duart">
+<Layout title="Eric Duart | Full Stack Developer">
+  <Header />
 
-	<Header />
+  <main>
+    <Aboutme />
+    <Projects />
+  </main>
 
-	<main>
-		<Aboutme />
-		<Projects />
-	</main>
-	
-	<Contact />
-
+  <Contact />
 </Layout>
-
-<style>
-
-</style>

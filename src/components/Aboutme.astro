@@ -5,11 +5,10 @@ import Stack from "../svgs/Stack.astro"
 
 ---
 <section>
+  <h1 class="eyebrow initial-animation">Sobre mí</h1>
   <div>
-    <p class="initial-animation justify">Creo que, si tuviera que definirme en una frase breve, diría algo como:</p> 
-    <p class="bold initial-animation"><span class="comillas">"</span>Curioso con curiosidad no finita, como el eterno girar de la rueda del tiempo.<span class="comillas">"</span></p>
-    <p class="initial-animation passions">Me encanta leer fantasía<span><Magic /></span>, jugar voleibol <span><Volleyball /></span> y, por supuesto, programar<span><Stack /></span>.</p>
-    <p class="mobile-passins initial-animation"><Magic /> - <Volleyball /> - <Stack /></p>
+    <p class="initial-animation passions">Tengo experiencia en desarrollo web, tanto backend como frontend, con foco en aplicaciones en producción, APIs REST e integración entre sistemas.</p>
+    <p class="initial-animation passions">Trabajo con C#, .NET, ASP.NET Core, Entity Framework Core, React, Next.js, Astro, SQL Server y MySQL. Me especializo en la resolución de incidencias, la mejora del rendimiento y el desarrollo de soluciones mantenibles y escalables.</p>
 
   </div>
 </section>
@@ -19,18 +18,26 @@ import Stack from "../svgs/Stack.astro"
 
   section {
     margin: 0 20px 40px;
-    display: flex;
-    justify-content: center;
+    #display: flex;
+    #justify-content: center;
   }
 
-  p {
-    margin: 0 auto;
+  div {
+    padding: 5px 50px;
+  }
+
+  div p {
+    margin: 20px auto;
     font-size: 1.1rem;
+    line-height: 150%;
+  }
+
+  h1 {
+    font-size: larger;
   }
 
   .comillas {
     color: var(--color-highlight);
-    font-size: 2rem;
   }
 
   .comillas:nth-child(1) {
@@ -69,6 +76,12 @@ import Stack from "../svgs/Stack.astro"
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    color: var(--color-secundary);
   }
 
   @media (width <= 740px) {
